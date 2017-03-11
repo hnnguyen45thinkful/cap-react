@@ -1,6 +1,8 @@
 export default [
     {
-        question: '',
+        question: //'do you like to kick',
+        answers: //['yes','no'],
+        scores: //{'tae-kwon-do':0, 'karate':0,'boxing':1}
 
     },
 
@@ -9,8 +11,7 @@ export default [
 
     },    
     {
-        question: '',
-
+        question: ''
     },    
     {
         question: '',

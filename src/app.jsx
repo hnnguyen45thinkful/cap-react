@@ -4,4 +4,4 @@ import { Route, Router, IndexRoute, hashHistory } from 'react-router';
 import Main from 'Main'
 
 
-ReactDOM.render(<App/>, document.getElementById('react-container'));
+ReactDOM.render(<Main />, document.getElementById('root'));

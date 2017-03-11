@@ -14,7 +14,26 @@ class Popup extends React.Component {
         this.popupHandle = this.popupHandle.bind(this);
     }
     
-
+    popupHandle() {
+        let { time } = this.state;
+        
+        if(time === 'start'){
+            this.setState({
+                time: 'end',
+                title: 'Congratulations!',
+                buttonText: 'Restart'
+            });
+            
+            this.props.startQuiz();
+        } else {            
+            location.reload();// restart the application
+        }
+    }
+    
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            text: 'You have completed the Martial Arts Survey to best fit you. <br /> You got a score of: <strong>' + this.props.score + '</strong> out of <strong>' +this.props.total +'</strong> which means the best fit for you is...'
+        })
+    }
 }
-
-export default Popup
+export default Popup;
