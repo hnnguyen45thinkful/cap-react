@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import QuestionList from './components/quest/QuestionList';
+import Scoreboard from './components/quest/Scoreboard';
+import Result from './components/quest/Result';
 import './App.css';
 
 class App extends Component {
@@ -14,6 +17,137 @@ class App extends Component {
       </div>
     );
   }
+}
+
+class App extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            questions: [
+                {
+                    id: 1,
+                    text: '',
+                    possibleAnswers: [
+                        {
+                            id: 'a',
+                            text: ''
+                        },
+                        {
+                            id: 'b',
+                            text: ''
+                        },
+                        {
+                            id: 'c',
+                            text: ''
+                        }
+                    ],
+                    //correctAnswer: 'c'
+                },
+                {
+                    id: 2,
+                    text: '',
+                    possibleAnswers: [
+                        {
+                            id: 'a',
+                            text: ''
+                        },
+                        {
+                            id: 'b',
+                            text: ''
+                        },
+                        {
+                            id: 'c',
+                            text: ''
+                        }
+                    ],
+                    //correctAnswer: 'c'
+
+                },
+                {
+                    id: 3,
+                    text: '',
+                    possibleAnswers: [
+                        {
+                            id: 'a',
+                            text: ''
+                        },
+                        {
+                            id: 'b',
+                            text: ''
+                        },
+                        {
+                            id: 'c',
+                            text: ''
+                        }
+                    ],
+                    //correctAnswer: 'b'
+
+                },
+                {
+                    id: 4,
+                    text: '',
+                    possibleAnswers: [
+                        {
+                            id: 'a',
+                            text: ''
+                        },
+                        {
+                            id: 'b',
+                            text: ''
+                        },
+                        {
+                            id: 'c',
+                            text: 'Schemas'
+                        }
+                    ],
+                    //correctAnswer: 'a'
+
+                }
+            ],
+            score: 0,
+            currentQuestion: 1
+        };
+
+        this.setCurrentQuestion = this.setCurrentQuestion.bind(this);
+        this.setScore = this.setScore.bind(this);
+
+    }
+
+    setCurrentQuestion(currentQuestion) {
+        this.setState({currentQuestion: currentQuestion});
+    }
+
+    setScore(score) {
+        this.setState({score: score});
+    }
+
+    render() {
+        let scoreboard,
+            result;
+
+        if (this.state.currentQuestion > this.state.questions.length) {
+            scoreboard = '';
+            result = <Result {...this.state}/>;
+        } else {
+            scoreboard = <Scoreboard {...this.state }/>;
+            result = '';
+        }
+
+        return (
+            <div className="col-md-6">
+                <h1 className="decision-heading">Martial Arts Decision</h1>
+                {scoreboard}
+                <QuestionList
+                    {...this.state}
+                    setCurrentQuestion={this.setCurrentQuestion}
+                    setScore={this.setScore}
+                />
+                {result}
+
+            </div>
+        );
+    }
 }
 
 export default App;

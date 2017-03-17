@@ -4,4 +4,4 @@ import { Router, Route, browserHistory, Redirect } from 'react-router';
 
 
 
-ReactDOM.render(<Main/>, document.getElementById('martialarts-app'));
+ReactDOM.render(<Main />, document.getElementById('root'));
