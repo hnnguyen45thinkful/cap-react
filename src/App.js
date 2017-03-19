@@ -17,10 +17,7 @@ class App extends Component {
       </div>
     );
   }
-}
-
-class App extends Component {
-    constructor(props) {
+  constructor(props) {
         super(props);
 
         this.state = {
@@ -42,7 +39,7 @@ class App extends Component {
                             text: ''
                         }
                     ],
-                    //correctAnswer: 'c'
+                    
                 },
                 {
                     id: 2,
@@ -61,8 +58,7 @@ class App extends Component {
                             text: ''
                         }
                     ],
-                    //correctAnswer: 'c'
-
+                    
                 },
                 {
                     id: 3,
@@ -81,8 +77,7 @@ class App extends Component {
                             text: ''
                         }
                     ],
-                    //correctAnswer: 'b'
-
+                    
                 },
                 {
                     id: 4,
@@ -101,8 +96,7 @@ class App extends Component {
                             text: 'Schemas'
                         }
                     ],
-                    //correctAnswer: 'a'
-
+                    
                 }
             ],
             score: 0,
@@ -149,5 +143,6 @@ class App extends Component {
         );
     }
 }
+    
 
 export default App;
