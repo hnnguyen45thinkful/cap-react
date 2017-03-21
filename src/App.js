@@ -5,24 +5,21 @@ import Result from './components/quest/Result';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Martial Art : Decision Making</h2>
-        </div>
-        <p className="App-intro">
-        Interested in starting Martial Arts? Don't know which discipline to study or start! 
-        Then you come to the right place to evaluate and decide which is a perfect fit for you.</p>
-      </div>
-    );
-  }
   constructor(props) {
         super(props);
 
         this.state = {
             arts : [
-                {title:"Karate",score:0},"Mixed Martial Arts","Tae Kwon Do","Jiu-Jitsu", "Judo", "Kendo" ,"Kickboxing/Thai Boxing"
+            //0 = yes, 1= no, 
+                {title: "Boxing", score:1}, //0
+                {title: "Karate", score:0},//1
+                {title: "Mixed Martial Arts (MMA)", score:0 },//2
+                {title: "Tae Kwon Do", score:0},//3
+                {title: "Jiu-Jitsu", score:1}, //4
+                {title: "Judo", score:1},//5
+                {title: "Submission/Catch Wrestling", score:1}, //6 
+                {title: "Kendo", score:1},//7
+                {title: "Kickboxing/Thai Boxing", score:0}
             ],
 
             questions: [
@@ -31,12 +28,17 @@ class App extends Component {
                     text: 'Do you prefer to strike and stand-up (punch and/or kick)?',
                     possibleAnswers: [
                         {
-                            
-                            text: 'yes',
+                            id: 'a',
+                            text:'yes',
                             '0': 1,
-                            '1': 1,
+                            '1': 0,
                             '2': 0,
-                            '3': 1
+                            '3': 0,
+                            '4': 1,
+                            '5': 1,
+                            '6': 1,
+                            '7': 1,
+                            '8': 0
                         },
                         {
                             id: 'b',
@@ -45,17 +47,13 @@ class App extends Component {
                             '1': 0,
                             '2': 1,
                             '3': 0
-                        },
-                        {
-                            id: 'c',
-                            text: ''
                         }
                     ],
                     
                 },
                 {
                     id: 2,
-                    text: 'Do you feel comfortable doing grappling, submissions, or throwing your opponent ? ',
+                    text: 'Do you feel comfortable grappling, doing submission, or throwing your opponent ? ',
                     possibleAnswers: [
                         {
                             id: 'a',
@@ -63,10 +61,6 @@ class App extends Component {
                         },
                         {
                             id: 'b',
-                            text: ''
-                        },
-                        {
-                            id: 'c',
                             text: ''
                         }
                     ],
@@ -83,10 +77,6 @@ class App extends Component {
                         {
                             id: 'b',
                             text: ''
-                        },
-                        {
-                            id: 'c',
-                            text: ''
                         }
                     ],
                     
@@ -102,11 +92,8 @@ class App extends Component {
                         {
                             id: 'b',
                             text: ''
-                        },
-                        {
-                            id: 'c',
-                            text: 'Schemas'
                         }
+
                     ],
                     
                 },
@@ -121,11 +108,8 @@ class App extends Component {
                         {
                             id: 'b',
                             text: ''
-                        },
-                        {
-                            id: 'c',
-                            text: 'Schemas'
                         }
+
                     ],
                     
                 }    
@@ -160,11 +144,13 @@ class App extends Component {
         }
 
         return (
+        <div className="App">
             <div className="col-md-6 col-md-offset-3">
                 <h1 className="decision-heading">Martial Art : Decision Making</h1>
             <p className="App-intro">
         Interested in starting Martial Arts? Don't know which discipline to study or start! 
         Then you come to the right place to evaluate and decide which is a perfect fit for you.</p>
+                <div className="App-header">
                 {scoreboard}
                 <QuestionList
                     {...this.state}
@@ -172,8 +158,10 @@ class App extends Component {
                     setScore={this.setScore}
                 />
                 {result}
-
+                </div>
             </div>
+        </div>
+
         );
     }
 }

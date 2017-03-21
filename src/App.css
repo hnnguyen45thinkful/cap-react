@@ -5,6 +5,8 @@
 
 .App-intro {
   font-size: large;
+  overflow:auto;
+  text-align:center;
 }
 
 body {
