@@ -10,16 +10,16 @@ class App extends Component {
 
         this.state = {
             arts : [
-            //0 = yes, 1= no, 
-                {title: "Boxing", score:1}, //0
+            //point system
+                {title: "Boxing", score:0}, //0
                 {title: "Karate", score:0},//1
                 {title: "Mixed Martial Arts (MMA)", score:0 },//2
                 {title: "Tae Kwon Do", score:0},//3
-                {title: "Jiu-Jitsu", score:1}, //4
-                {title: "Judo", score:1},//5
-                {title: "Submission/Catch Wrestling", score:1}, //6 
-                {title: "Kendo", score:1},//7
-                {title: "Kickboxing/Thai Boxing", score:0}
+                {title: "Jiu-Jitsu", score:0}, //4
+                {title: "Judo", score:0},//5
+                {title: "Submission/Catch Wrestling", score:0}, //6 
+                {title: "Kendo", score:0},//7
+                {title: "Kickboxing/Thai Boxing", score:0}//8
             ],
 
             questions: [
@@ -30,23 +30,38 @@ class App extends Component {
                         {
                             id: 'a',
                             text:'yes',
-                            '0': 1,
-                            '1': 0,
-                            '2': 0,
-                            '3': 0,
-                            '4': 1,
-                            '5': 1,
-                            '6': 1,
-                            '7': 1,
-                            '8': 0
+                            scores: [
+                                '0': 1,
+                                '1': 1,
+                                '2': 1,
+                                '3': 1,
+                                '4': 0,
+                                '5': 0,
+                                '6': 0,
+                                '7': 1,
+                                '8': 1
+                            ]
+                            /*
+
+                            for(var i=0;i<answer.scores.length;i++){
+                                this.state.arts[i].score += answer.scores[i];
+                            }
+                            */
                         },
                         {
                             id: 'b',
                             text: 'no',
-                            '0': 0,
-                            '1': 0,
-                            '2': 1,
-                            '3': 0
+                            scores: [
+                                '0': 0,
+                                '1': 0,
+                                '2': 0,
+                                '3': 0,
+                                '4': 1,
+                                '5': 1,
+                                '6': 1,
+                                '7': 1,
+                                '8': 0
+                            ]
                         }
                     ],
                     
@@ -57,11 +72,34 @@ class App extends Component {
                     possibleAnswers: [
                         {
                             id: 'a',
-                            text: ''
+                            text: 'yes',
+                            scores: [
+                                '0': 0,
+                                '1': 0,
+                                '2': 1,
+                                '3': 0,
+                                '4': 1,
+                                '5': 1,
+                                '6': 1,
+                                '7': 1,
+                                '8': 0
+                            ]
+
                         },
                         {
                             id: 'b',
-                            text: ''
+                            text: 'no'
+                            scores: [
+                                '0': 0,
+                                '1': 0,
+                                '2': 0,
+                                '3': 1,
+                                '4': 0,
+                                '5': 0,
+                                '6': 0,
+                                '7': 0,
+                                '8': 1
+                            ]
                         }
                     ],
                     
@@ -72,26 +110,70 @@ class App extends Component {
                     possibleAnswers: [
                         {
                             id: 'a',
-                            text: ''
+                            text: 'yes',
+                            scores: [
+                                '0': 0,
+                                '1': 1,
+                                '2': 0,
+                                '3': 1,
+                                '4': 0,
+                                '5': 0,
+                                '6': 0,
+                                '7': 1,
+                                '8': 0
+                            ]
                         },
                         {
                             id: 'b',
-                            text: ''
+                            text: 'no',
+                            scores: [
+                                '0': 1,
+                                '1': 0,
+                                '2': 1,
+                                '3': 0,
+                                '4': 1,
+                                '5': 1,
+                                '6': 1,
+                                '7': 0,
+                                '8': 1
+                            ]
                         }
                     ],
                     
                 },
                 {
                     id: 4,
-                    text: 'Do you like to compete in tournaments or olympics in the future? ',
+                    text: 'Do you like to learn the history, arts, honor and compete in the olympics?',
                     possibleAnswers: [
                         {
                             id: 'a',
-                            text: ''
+                            text: 'yes',
+                            scores: [
+                                '0': 0,
+                                '1': 1,
+                                '2': 0,
+                                '3': 1,
+                                '4': 1,
+                                '5': 1,
+                                '6': 0,
+                                '7': 1,
+                                '8': 0
+                            ]
                         },
                         {
                             id: 'b',
-                            text: ''
+                            text: 'no',
+                            scores: [
+                                '0': 1,
+                                '1': 0,
+                                '2': 1,
+                                '3': 0,
+                                '4': 0,
+                                '5': 0,
+                                '6': 1,
+                                '7': 0,
+                                '8': 1
+                            ]
                         }
 
                     ],
@@ -103,11 +185,33 @@ class App extends Component {
                     possibleAnswers: [
                         {
                             id: 'a',
-                            text: ''
+                            text: 'yes',
+                            scores: [
+                                '0': 0,
+                                '1': 1,
+                                '2': 0,
+                                '3': 1,
+                                '4': 0,
+                                '5': 0,
+                                '6': 0,
+                                '7': 0,
+                                '8': 1
+                            ]
                         },
                         {
                             id: 'b',
-                            text: ''
+                            text: 'no',
+                            scores: [
+                                '0': 1,
+                                '1': 0,
+                                '2': 1,
+                                '3': 0,
+                                '4': 1,
+                                '5': 1,
+                                '6': 1,
+                                '7': 1,
+                                '8': 0
+                            ]
                         }
 
                     ],

@@ -6,7 +6,8 @@ class Result extends Component {
     }
 
     render() {
-        let percent = this.props.score / this.props.questions.length * 100;
+        let percent = this.props.score
+        // / this.props.questions.length * 100;
         let message = '';
 
         // if (percent > 80) {
