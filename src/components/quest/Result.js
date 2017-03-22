@@ -14,9 +14,9 @@ class Result extends Component {
         if (points > 80) {
             message = '';
         } else if (percent < 80 && percent > 60) {
-            message = 'You did ok!';
+            message = '';
         } else {
-            message = 'You did horrible!';
+            message = '';
         }
 
     // render() {
