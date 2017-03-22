@@ -1,3 +1,6 @@
+//http://stackoverflow.com/questions/20905227/reactjs-unexpected-token-error
+//http://stackoverflow.com/questions/8837454/sort-array-of-objects-by-single-key-with-date-value
+
 import React, { Component } from 'react';
 import QuestionList from './components/quest/QuestionList';
 import Scoreboard from './components/quest/Scoreboard';
@@ -10,7 +13,7 @@ class App extends Component {
 
         this.state = {
             arts : [
-            //point system
+            //point system scores starts at zero
                 {title: "Boxing", score:0}, //0
                 {title: "Karate", score:0},//1
                 {title: "Mixed Martial Arts (MMA)", score:0 },//2
@@ -88,7 +91,7 @@ class App extends Component {
                         },
                         {
                             id: 'b',
-                            text: 'no'
+                            text: 'no',
                             scores: [
                                 '0': 0,
                                 '1': 0,
@@ -218,6 +221,7 @@ class App extends Component {
                     
                 }    
             ],
+            //Start off current score and question
             score: 0,
             currentQuestion: 1
         };

@@ -4,19 +4,41 @@ class Result extends Component {
     constructor(props) {
         super(props);
     }
-
     render() {
-        let percent = this.props.score
-        // / this.props.questions.length * 100;
+            for(const i=0; i<answer.scores.length; i++) {
+                this.state.arts[i].score += answer.scores[i];
+            }
+        let points = this.props.score / this.props.questions.length * 100;
         let message = '';
 
-        // if (percent > 80) {
-        //     message = '';
-        // } else if (percent < 80 && percent > 60) {
-        //     message = '';
-        // } else {
-        //     message = '';
-        // }
+        if (points > 80) {
+            message = '';
+        } else if (percent < 80 && percent > 60) {
+            message = 'You did ok!';
+        } else {
+            message = 'You did horrible!';
+        }
+
+    // render() {
+    //     let percent = this.props.score
+    //     // / this.props.questions.length * 100;
+    //     let message = '';
+
+    //     // if (percent > 80) {
+    //     //     message = '';
+    //     // } else if (percent < 80 && percent > 60) {
+    //     //     message = '';
+    //     // } else {
+    //     //     message = '';
+    //     // }
+
+    //                                 /*
+
+    //                         for(var i=0;i<answer.scores.length;i++){
+    //                             this.state.arts[i].score += answer.scores[i];
+    //                         }
+    //                         */
+            
 
         return (
             <div className="well">
