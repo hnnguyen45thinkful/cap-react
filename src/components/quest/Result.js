@@ -8,7 +8,8 @@ class Result extends Component {
             for(const i=0; i<answer.scores.length; i++) {
                 this.state.arts[i].score += answer.scores[i];
             }
-        let points = this.props.score / this.props.questions.length * 100;
+        let points = this.props.score
+        //this.props.questions.length * 100;
         let message = '';
 
         if (points > 80) {
@@ -42,10 +43,10 @@ class Result extends Component {
 
         return (
             <div className="well">
-                <p>You got {this.props.score} out of {this.props.questions.length} correct.</p>
-                <h1>{percent}% - {message}</h1>
+                <p>You got a score of {this.props.score} from the {this.props.questions.length} questions.</p>
+                <h1>{points} - {message}</h1>
                 <hr/>
-                <a href="/">Try again</a>
+                <a href="/">Try again for another decision!!!</a>
             </div>
         )
     }
