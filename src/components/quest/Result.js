@@ -5,6 +5,7 @@ class Result extends Component {
         super(props);
     }
     render() {
+            const arts;
             for(const i=0; i<answer.scores.length; i++) {
                 this.state.arts[i].score += answer.scores[i];
             }
@@ -14,7 +15,7 @@ class Result extends Component {
 
         if (points > 80) {
             message = '';
-        } else if (percent < 80 && percent > 60) {
+        } else if (points < ) {
             message = '';
         } else {
             message = '';
