@@ -227,7 +227,13 @@ class App extends Component {
             score: 0,
             currentQuestion: 1
         };
-
+//text: 'Do you prefer to strike and stand-up (punch and/or kick)?',
+//text: 'Do you feel comfortable grappling, doing submission, or throwing your opponent ? ',
+//text: 'Are you okay using weapons, foreign objects, or any sharp weapons for hand to hand combat sparring ? ',
+//text: 'Do you like to learn the history, arts, honor and compete in the olympics?',
+//text: 'Would you like to learn how to break wooden boards, bricks, stones, etc. ? ',
+// 1 : y,y,y,y,y => MMA 
+//question 2 : 
         this.setCurrentQuestion = this.setCurrentQuestion.bind(this);
         this.setScore = this.setScore.bind(this);
 
