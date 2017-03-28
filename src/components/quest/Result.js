@@ -5,18 +5,18 @@ class Result extends Component {
         super(props);
     }
     render() {
-        arr.sort(function(a, b){
-        const keyA = new 
-        const keyB = new Date(b.updated_at);
+        /*arr.sort(function(a, b){
+            const A = new Arts(a)
+            const B = new Arts(b)
 
-    if(keyA < keyB) 
-        return 0;
-        message = ''
-    if(keyA > keyB) 
-        return 1;
-    
-    return 0;
-});
+            if(A < B) 
+                return 0;
+                message = ''
+            if(A > B) 
+                return 1;
+
+            return 0;
+        }
         //    const arts = ;
             for(const i=0; i<answer.scores.length; i++) {
                 this.state.arts[i].score += answer.scores[i];
@@ -51,12 +51,19 @@ class Result extends Component {
     //                             this.state.arts[i].score += answer.scores[i];
     //                         }
     //                         */
-            
+            let points,message;
+
+            let arts = this.props.arts;
+            arts.sort(function(a,b){
+                if(a.score > b.score) return -1;
+                if(a.score < b.score) return 1;
+                return 0;
+            });
 
         return (
             <div className="well">
-                <p>You got a score of {this.props.score} from the {this.props.questions.length} questions.</p>
-                <h1>{points} - {message}</h1>
+                <p>We have selected the perfect Marital Art based on your answers.</p>
+                <h1>{arts[0].title} - with a score of {arts[0].score}</h1>
                 <hr/>
                 <a href="/">Try again for another decision-making!!!</a>
             </div>

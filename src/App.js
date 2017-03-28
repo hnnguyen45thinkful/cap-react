@@ -36,15 +36,15 @@ class App extends Component {
                             id: 'a',
                             text:'yes',
                             scores: [
-                                '0': 1,
-                                '1': 1,
-                                '2': 1,
-                                '3': 1,
-                                '4': 0,
-                                '5': 0,
-                                '6': 0,
-                                '7': 1,
-                                '8': 1
+                                1,
+                                1,
+                                1,
+                                1,
+                                0,
+                                0,
+                                0,
+                                1,
+                                1
                             ]
                             /*
 
@@ -57,15 +57,15 @@ class App extends Component {
                             id: 'b',
                             text: 'no',
                             scores: [
-                                '0': 0,
-                                '1': 0,
-                                '2': 0,
-                                '3': 0,
-                                '4': 1,
-                                '5': 1,
-                                '6': 1,
-                                '7': 1,
-                                '8': 0
+                                0,
+                                0,
+                                0,
+                                0,
+                                1,
+                                1,
+                                1,
+                                1,
+                                0
                             ]
                         }
                     ],
@@ -79,15 +79,15 @@ class App extends Component {
                             id: 'a',
                             text: 'yes',
                             scores: [
-                                '0': 0,
-                                '1': 0,
-                                '2': 1,
-                                '3': 0,
-                                '4': 1,
-                                '5': 1,
-                                '6': 1,
-                                '7': 1,
-                                '8': 0
+                                0,
+                                0,
+                                1,
+                                0,
+                                1,
+                                1,
+                                1,
+                                1,
+                                0
                             ]
 
                         },
@@ -95,15 +95,15 @@ class App extends Component {
                             id: 'b',
                             text: 'no',
                             scores: [
-                                '0': 0,
-                                '1': 0,
-                                '2': 0,
-                                '3': 1,
-                                '4': 0,
-                                '5': 0,
-                                '6': 0,
-                                '7': 0,
-                                '8': 1
+                                0,
+                                0,
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                1
                             ]
                         }
                     ],
@@ -117,30 +117,30 @@ class App extends Component {
                             id: 'a',
                             text: 'yes',
                             scores: [
-                                '0': 0,
-                                '1': 1,
-                                '2': 0,
-                                '3': 1,
-                                '4': 0,
-                                '5': 0,
-                                '6': 0,
-                                '7': 1,
-                                '8': 0
+                                0,
+                                1,
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                1,
+                                0
                             ]
                         },
                         {
                             id: 'b',
                             text: 'no',
                             scores: [
-                                '0': 1,
-                                '1': 0,
-                                '2': 1,
-                                '3': 0,
-                                '4': 1,
-                                '5': 1,
-                                '6': 1,
-                                '7': 0,
-                                '8': 1
+                                1,
+                                0,
+                                1,
+                                0,
+                                1,
+                                1,
+                                1,
+                                0,
+                                1
                             ]
                         }
                     ],
@@ -154,30 +154,30 @@ class App extends Component {
                             id: 'a',
                             text: 'yes',
                             scores: [
-                                '0': 0,
-                                '1': 1,
-                                '2': 0,
-                                '3': 1,
-                                '4': 1,
-                                '5': 1,
-                                '6': 0,
-                                '7': 1,
-                                '8': 0
+                                0,
+                                1,
+                                0,
+                                1,
+                                1,
+                                1,
+                                0,
+                                1,
+                                0
                             ]
                         },
                         {
                             id: 'b',
                             text: 'no',
                             scores: [
-                                '0': 1,
-                                '1': 0,
-                                '2': 1,
-                                '3': 0,
-                                '4': 0,
-                                '5': 0,
-                                '6': 1,
-                                '7': 0,
-                                '8': 1
+                                1,
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                1,
+                                0,
+                                1
                             ]
                         }
 
@@ -192,30 +192,30 @@ class App extends Component {
                             id: 'a',
                             text: 'yes',
                             scores: [
-                                '0': 0,
-                                '1': 1,
-                                '2': 0,
-                                '3': 1,
-                                '4': 0,
-                                '5': 0,
-                                '6': 0,
-                                '7': 0,
-                                '8': 1
+                                0,
+                                1,
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                1
                             ]
                         },
                         {
                             id: 'b',
                             text: 'no',
                             scores: [
-                                '0': 1,
-                                '1': 0,
-                                '2': 1,
-                                '3': 0,
-                                '4': 1,
-                                '5': 1,
-                                '6': 1,
-                                '7': 1,
-                                '8': 0
+                                1,
+                                0,
+                                1,
+                                0,
+                                1,
+                                1,
+                                1,
+                                1,
+                                0
                             ]
                         }
 
@@ -243,8 +243,14 @@ class App extends Component {
         this.setState({currentQuestion: currentQuestion});
     }
 
-    setScore(score) {
-        this.setState({score: score});
+    setScore(scores) {
+        let arts = this.state.arts;
+        console.log(scores);
+        for (var i = 0; i < scores.length; i++) {
+            arts[i].score = parseInt(arts[i].score) + parseInt(scores[i]);
+        }
+        this.setState({arts:arts});
+
     }
 
     render() {

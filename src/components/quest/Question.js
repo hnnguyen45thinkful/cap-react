@@ -14,9 +14,15 @@ class Question extends Component {
         let {setCurrentQuestion, setScore, question} = this.props;
         let selected = e.target.value;
 
-        if (selected === question.correctAnswer) {
-            setScore(this.props.score + 1);
-        }
+        question.possibleAnswers.map(possibleAnswer => {
+            if(possibleAnswer.id == selected){
+                setScore(possibleAnswer.scores);
+            }
+        })
+
+        // if (selected === question.correctAnswer) {
+        //     setScore(this.props.score + 1);
+        // }
 
         setCurrentQuestion(this.props.currentQuestion + 1);
     }
