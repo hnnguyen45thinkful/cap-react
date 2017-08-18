@@ -3,16 +3,23 @@ import React, {Component} from 'react';
 class Result extends Component {
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
     }
+
+    handleClick(event){
+      event.preventDefault();
+      window.location.reload(true);
+    }
+
     render() {
         /*arr.sort(function(a, b){
             const A = new Arts(a)
             const B = new Arts(b)
 
-            if(A < B) 
+            if(A < B)
                 return 0;
                 message = ''
-            if(A > B) 
+            if(A > B)
                 return 1;
 
             return 0;
@@ -65,7 +72,7 @@ class Result extends Component {
                 <p>We have selected the perfect Marital Art based on your answers.</p>
                 <h1>{arts[0].title} - with a score of {arts[0].score}</h1>
                 <hr/>
-                <a href="/">Try again for another decision-making!!!</a>
+                <a href="#" onClick={this.handleClick}>Try again for another decision-making!!!</a>
             </div>
         )
     }
